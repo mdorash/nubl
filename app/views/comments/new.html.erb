@@ -1,0 +1,17 @@
+<% provide :title, @post.title %>
+<h1 style="text-align: center;"><%= yield :title %></h1>
+<%= render 'form' %>
+<% if @post.text %>
+   <p> <%= @post.text  %> </p>
+ <% end %>
+<% if @comments != nil %>
+    <ul>
+      <% @comments.each do |comment| %>
+          <li><%=comment.text%>
+          </li>
+      <% end %>
+    </ul>
+<%end%>
+
+
+

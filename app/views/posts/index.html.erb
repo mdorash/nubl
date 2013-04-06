@@ -1,0 +1,35 @@
+<% provide :title, "NUBL-BUBL"%>
+<head>
+
+<h1><%= yield :title %></h1>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="span3">
+      <div class="span10">
+    <% @posts.each do |post| %>
+    <table class="table table-bordered">
+      <tbody>
+      <tr>
+        <dl><dt><%= link_to post.title, post.url %>   </dt>
+        <dd> <%= link_to "Edit", edit_post_path(post)%>
+    <%= link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+    <%= link_to "Comments", new_comment_path(:my => post.id) %>
+    <%= link_to'Like', post_like_path(post) %> <%= post.rating %> </dd>   </dl>
+      </tr>
+
+      </tbody>
+    </table>
+
+  <% end %>
+
+<p>
+   <button class="btn" type="button"><%=link_to "submit", new_post_path %></button>
+</p>
+    </div>
+    </div>
+</div>
+</div>
+</body>
+
