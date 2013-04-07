@@ -10,27 +10,30 @@
 <% end %>
 
 
-<div class="container1">
 
- <%= form_for @post, :html => {class:"form-vertical"},:url => new_post_path  do |f| %>
-
-    <%= f.label :title %>
-
-    <%= f.text_field :title, :autofocus => true, class:"input" %>
-
-    <%= f.label :url%>
-    <%= f.text_field :url, class:"input" %>
+ <%= form_for @post, :html => {class:"form-horizontal form-condensed form-add"}  do |f| %>
+    <div class="control-group">
+    <%= f.label :title, class:"control-label" %>
+      <div class="controls">
+    <%= f.text_field :title %>
+      </div>
+    </div>
+    <div class="control-group">
+    <%= f.label :url, class:"control-label"%>
+      <div class="controls">
+    <%= f.text_field :url %>
+      </div>
+    </div>
         <h4> or</h4>
-    <%= f.label :text %>
-    <textarea rows="3"> <%= f.text_field :text %>  </textarea>
-    <div class="form-actions">
-      <%= f.submit :class => 'btn btn-primary' %>
-    </div>        </div>
-
-
+      <div class="control-group">
+    <%= f.label :text, class:"control-label" %>
+        <div class="controls">
+     <%= f.text_area :text, :rows => "3" %>
+        </div>
       </div>
 
-
-
+    <div class="form-actions">
+      <%= f.submit :class => 'btn btn-primary' %>
+    </div>
 <% end %>
 
