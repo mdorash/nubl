@@ -12,10 +12,10 @@
       <tbody>
       <tr>
         <dl><dt><%= link_to post.title, post.url %>   </dt>
-        <dd> <%= link_to "Edit", edit_post_path(post)%>
-    <%= link_to 'Delete', post, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
-    <%= link_to "Comments", new_comment_path(:my => post.id) %>
-    <%= link_to'Like', post_like_path(post) %> <%= post.rating %> </dd>   </dl>
+        <dd> <%= link_to "Рэдагаваць", edit_post_path(post)%>
+    <%= link_to 'Выдаліць', post, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+    <%= link_to "Каментары", new_comment_path(:my => post.id) %>
+    <%= link_to'Падабаецца', post_like_path(post) %> <%= post.rating %> </dd>   </dl>
       </tr>
 
       </tbody>
@@ -24,8 +24,8 @@
   <% end %>
 
 <p>
-   <button class="btn" type="button"><%=link_to "submit", new_post_path %></button>
-</p>
+  <a href="http://localhost:3000/posts/new" class="btn btn-info ">стварыць пост</a>
+  </p>
     </div>
     </div>
 </div>
