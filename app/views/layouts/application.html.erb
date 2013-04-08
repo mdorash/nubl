@@ -28,9 +28,10 @@
 
       <ul class="nav pull-right">
 
-        <li class="active">
+        <li class="active" > <i class="icon-user"></i>
           <% unless user_signed_in?%>
-            <li><%= link_to "уваход", new_user_session_path%></li>
+              <i class="icon-search icon-white"></i>
+              <li><%= link_to "уваход", new_user_session_path%>
         <%end%>
         <% if user_signed_in?%>
             <li><%= link_to "выхад", destroy_user_session_path, :method => :delete%></li>
